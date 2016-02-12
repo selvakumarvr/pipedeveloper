@@ -1,0 +1,65 @@
+-# Hide header in map view if mobile
+%header.header
+  .header-wrapper
+    .header-right.header-padding.visible-tablet
+      = link_to t("homepage.index.post_new_listing"), new_listing_path, :class => "new-listing-link", :id => "new-listing-link"
+
+    .header-right.visible-tablet
+      #header-menu-desktop-anchor.header-menu-container.toggle.hidden{data: {toggle: '#header-menu-toggle-menu', 'toggle-position' => 'absolute'}}
+
+    - Maybe(@current_user).each do |user|
+      - conversations = @current_community.conversations.for_person(user)
+      - unread_count = MarketplaceService::Inbox::Query.notification_count(user.id, @current_community.id)
+
+      .header-right
+        = render :partial => "layouts/header_anchors", locals: {user: user}
+        = render :partial => "layouts/header_user_menu", locals: {unread_count: unread_count, user: user}
+
+      = render :partial => "layouts/header_right_visible_tablet", locals: {unread_count: unread_count, user: user}
+
+    - with_available_locales do |locales|
+      .header-right.visible-desktop
+        #header-locales-menu.toggle.header-hover{data: {toggle: '#header-locales-toggle-menu', 'toggle-position' => 'absolute'}}
+          %span.header-text-link
+            = get_full_locale_name(I18n.locale).to_s
+            = icon_tag("dropdown", ["icon-dropdown"])
+        #header-locales-toggle-menu.toggle-menu.header-toggle-menu-language.hidden
+          = render :partial => "layouts/locale_select", :collection => locales, :as => :loc_array
+
+    .header-right.visible-desktop
+      .header-hover
+        %span.header-text-link
+          = link_to new_user_feedback_path, style: "color: #000" do
+            = t("header.contact_us")
+    .header-right.visible-desktop
+      .header-hover
+        %span.header-text-link
+          = link_to about_infos_path, style: "color: #000" do
+            = t("header.about")
+
+    - unless @current_user
+      .header-right
+        = link_to sign_up_path, class: "header-text-link header-hover" do
+          = t("header.signup")
+      .header-right
+        = link_to login_path, class: "header-text-link header-hover", id: "header-login-link" do
+          = t("header.login")
+
+    .header-left.hidden-tablet
+      .header-menu-container.toggle.hidden{data: {toggle: '#header-menu-toggle-menu', 'toggle-position' => 'absolute'}}
+        #header-menu-mobile-anchor.header-menu-toggle-container.toggle-header-container.hidden-desktop
+          = icon_tag("rows", ["header-menu-icon"])
+          %span.visible-tablet-inline
+            = t("header.menu")
+
+    = render :partial => "layouts/header_menu"
+
+    -#
+      If necessary, the buttons will overlap with the logo. Buttons should be on top, that's
+      keep the logo here after buttons
+    .header-left.header-logo-container
+      = link_to @homepage_path, :class => "header-logo", :id => "header-logo" do
+        %i.header-wide-logo.visible-tablet
+          -# Logo is here, it's a CSS background
+        %i.header-square-logo.hidden-tablet
+          -# Logo is here, it's a CSS background

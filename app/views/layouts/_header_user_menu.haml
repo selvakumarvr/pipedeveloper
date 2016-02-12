@@ -1,0 +1,35 @@
+#header-user-toggle-menu.toggle-menu.header-toggle-menu-user.hidden
+
+  = link_to person_inbox_path(@current_user) do
+    = icon_tag("mail", ["icon-with-text"])
+    = t("layouts.conversations.messages")
+    - if unread_count > 0
+      .mobile-badge{:class => get_badge_class(unread_count)}
+        = unread_count
+
+  = link_to person_path(user) do
+    = icon_tag("user", ["icon-with-text"])
+    = t("header.profile")
+
+  = link_to person_settings_path(user) do
+    = icon_tag("settings", ["icon-with-text"])
+    = t("layouts.logged_in.settings")
+
+  - with_invite_link do
+    = link_to new_invitation_path do
+      = icon_tag("invite", ["icon-with-text"])
+      = t("header.invite")
+  - Maybe(@current_community).menu_links.each do |menu_links|
+    - menu_links.each do |menu_link|
+      = link_to menu_link.url(I18n.locale), :target => "_blank" do
+        = icon_tag("redirect", ["icon-with-text"])
+        = menu_link.title(I18n.locale)
+
+  - if @current_user && @current_community && @current_user.has_admin_rights_in?(@current_community)
+    = link_to edit_details_admin_community_path(@current_community) do
+      = icon_tag("admin", ["icon-with-text"])
+      = t("layouts.logged_in.admin")
+
+  = link_to logout_path do
+    = icon_tag("logout", ["icon-with-text"])
+    = t("layouts.logged_in.logout")

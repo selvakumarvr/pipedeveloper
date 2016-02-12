@@ -1,0 +1,28 @@
+{
+  "please_wait": "Түр хүлээнэ үү ...",
+  "validation_messages": {
+    "accept": "Зургийн файл нь GIF, JPG, эсвэл PNG хэлбэрээр байх ёстой.",
+    "creditcard": "Зөв зээлийн картын дугаарыг оруулна уу.",
+    "date": "Хүчинтэй хугацааг оруулна уу.",
+    "dateISO": "Зөв хугацааг оруулна уу (ISO).",
+    "digits": "Зөвхөн цифр оруулна уу.",
+    "email": "Зөв и-мэйл хаягаа оруулна уу.",
+    "equalTo": "Дахин утгыг оруулна уу.",
+    "max": "Бага эсвэл {0} ижил утгыг оруулна уу.",
+    "maxlength": "{0}-с доош тэмдэгт оруулна уу.",
+    "min": "Илүү эсвэл {0} ижил утгыг оруулна уу.",
+    "minlength": "Please enter at least {0} characters.",
+    "number": "Please enter a valid number.",
+    "range": "Please enter a value between {0} and {1}.",
+    "rangelength": "Please enter a value between {0} and {1} characters long.",
+    "remote": "Please fix this field.",
+    "required": "This field is required.",
+    "url": "Please enter a valid URL.",
+    "address_validator": "The location was not found.",
+    "money": "You need to insert a valid monetary value.",
+    "min_bound": "Please enter a value less than max value ({0})",
+    "max_bound": "Please enter a value more than min value ({0})",
+    "number_no_decimals": "Please enter a whole number",
+    "number_decimals": "Please enter a valid number with either dot (.) or comma (,) as a decimal separator"
+  }
+}

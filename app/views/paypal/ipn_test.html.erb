@@ -1,0 +1,4 @@
+<%= form_tag('/paypal/notify_payment_local', method: :post) do |f| %>
+  <%= text_field_tag "txn_id" %>
+  <%= submit_tag %>
+<% end %>

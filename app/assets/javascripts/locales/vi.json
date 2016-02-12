@@ -1,0 +1,28 @@
+{
+  "please_wait": "Xin chờ...",
+  "validation_messages": {
+    "accept": "Tập tin ảnh phải là một trong các định dạng GIF, JPG hoặc PNG",
+    "creditcard": "Vui lòng nhập số thẻ tín dụng hợp lệ.",
+    "date": "Vui lòng nhập ngày hợp lệ.",
+    "dateISO": "Vui lòng nhập ngày hợp lệ (ISO).",
+    "digits": "Vui lòng chỉ nhập con số.",
+    "email": "Vui lòng nhập địa chỉ email hợp lệ.",
+    "equalTo": "Vui lòng nhập cùng giá trị lần nữa.",
+    "max": "Xin hãy nhập giá trị nhỏ hơn hoặc bằng {0}.",
+    "maxlength": "Vui lòng nhập không nhiều hơn {0} ký tự.",
+    "min": "Xin hãy nhập giá trị lớn hơn hoặc bằng {0}.",
+    "minlength": "Xin hãy nhập ít nhất {0} ký tự.",
+    "number": "Hãy nhập số hợp lệ.",
+    "range": "Vui lòng nhập giá trị nằm giữa {0} và {1}.",
+    "rangelength": "Vui lòng nhập một giá trị giữa  {0} và  {1} độ dài các ký tự.",
+    "remote": "Hãy sửa trường này.",
+    "required": "Trường này là bắt buộc.",
+    "url": "Vui lòng nhập URL hợp lệ.",
+    "address_validator": "The location was not found.",
+    "money": "You need to insert a valid monetary value.",
+    "min_bound": "Please enter a value less than max value ({0})",
+    "max_bound": "Please enter a value more than min value ({0})",
+    "number_no_decimals": "Please enter a whole number",
+    "number_decimals": "Please enter a valid number with either dot (.) or comma (,) as a decimal separator"
+  }
+}

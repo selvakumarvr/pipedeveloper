@@ -1,0 +1,23 @@
+#new_message_form.centered-section
+
+  - author_link = link_to(author[:display_name], person_path(id: author[:username]))
+
+  .preauthorize-section
+    %h2.preauthorize-details-title
+      = t(".details")
+
+    %ul.no-bullets
+      %li
+        %div
+          = t(".by", listing: link_to("#{listing[:title]}", listing_path(listing[:id])), author: author_link).html_safe
+
+      %li
+        = render partial: "transactions/price_break_down", locals: price_break_down_locals
+      %li
+        = form_tag form_action, method: "post", id: "payment-form" do |form|
+          %input{type: "hidden", value: "#{@duration}", name: "quantity"}
+          %input{type: "hidden", value: "paypal", name: "payment_type"}
+          %input{type: "hidden", value: "#{@total_price}", name: "total_price"}
+          = date_select :start_on, "", discard_day: true, discard_month: true, discard_year: true, default: TransactionViewUtils.parse_booking_date(params[:start_on])
+          = date_select :end_on, "", discard_day: true, discard_month: true, discard_year: true, default: TransactionViewUtils.parse_booking_date(params[:end_on])
+          %input#submitBtn{:src => "https://www.paypal.com/en_US/i/btn/btn_xpressCheckout.gif", :type => "image", :value => "Pay with PayPal"}/

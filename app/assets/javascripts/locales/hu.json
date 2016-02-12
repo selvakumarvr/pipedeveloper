@@ -1,0 +1,28 @@
+{
+  "please_wait": "Várj...",
+  "validation_messages": {
+    "accept": null,
+    "creditcard": "Adj meg érvényes hitelkártya számot.",
+    "date": "Adj meg érvényes dátumot!",
+    "dateISO": "Adj meg érvényes dátumot!",
+    "digits": null,
+    "email": "Valós email címet adj meg!",
+    "equalTo": null,
+    "max": null,
+    "maxlength": null,
+    "min": null,
+    "minlength": null,
+    "number": null,
+    "range": null,
+    "rangelength": null,
+    "remote": "Kérlek javítsd a mezőt.",
+    "required": "A mező kitöltése kötelező.",
+    "url": "Adjon meg érvényes URL-t.",
+    "address_validator": "A helyszín nem található.",
+    "money": "You need to insert a valid monetary value.",
+    "min_bound": "Please enter a value less than max value ({0})",
+    "max_bound": "Please enter a value more than min value ({0})",
+    "number_no_decimals": "Please enter a whole number",
+    "number_decimals": "Please enter a valid number with either dot (.) or comma (,) as a decimal separator"
+  }
+}

@@ -1,0 +1,21 @@
+.conversation-status
+  - get_conversation_statuses(__transaction_model, is_author).each do |status|
+    - if status[:type] == :status_info
+      .inbox-horizontally-aligned-status
+        = render :partial => "transactions/status/status_text", :locals => { :status_info => status[:content]}
+
+        - if status[:content][:info_text_part] == "Payment successful"
+          - if __transaction_model.listing.author.id == @current_user.id and __transaction_model.deposit_refunded_at.nil? and !__transaction_model.deposit_cents.nil?
+            = form_tag "/transactions/#{__transaction_model.id}/refund_deposit" do |f|
+              %button{type: "submit"}
+                Refund Deposit
+
+          - if not __transaction_model.deposit_refunded_at.nil?
+            %p
+              Deposit refunded at #{__transaction_model.deposit_refunded_at.strftime("%m/%d/%Y - %H:%m")}
+
+    - else
+      - if role == :participant
+        .status-links
+          - status[:content].each do |status_link|
+            = render :partial => "transactions/status/status_link", :locals => { :conversation => __transaction_model, :status_link => status_link }

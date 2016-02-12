@@ -1,0 +1,13 @@
+- frontpage_fragment_cache("grid_item", listing) do
+  .home-fluid-thumbnail-grid-item
+    %div
+      -# Listing image
+      = render :partial => "layouts/grid_item_listing_image", :locals => {:listing => listing, :modifier_class => ""}
+
+      -# Listing author details
+      .home-fluid-thumbnail-grid-author
+        .home-fluid-thumbnail-grid-author-avatar
+          = link_to(person_path(id: listing.author.username)) do
+            = image_tag(listing.author.avatar.thumb, :class => "home-fluid-thumbnail-grid-author-avatar-image")
+        = link_to(person_path(id: listing.author.username), :class => "home-fluid-thumbnail-grid-author-name") do
+          = PersonViewUtils::person_entity_display_name(listing.author, @current_community.name_display_type)

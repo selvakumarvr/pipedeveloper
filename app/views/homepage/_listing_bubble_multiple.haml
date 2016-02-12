@@ -1,0 +1,14 @@
+.bubble-navi-container
+  .bubble-navi
+    %a
+      %i.bubble-navi-left.ss-navigateleft
+    .bubble-navi-header
+      %span.buble-navi-selected-item
+        = "1"
+      \/
+      %span.buble-navi-total-items
+        = "2"
+    %a
+      %i.bubble-navi-right.ss-navigateright
+  .bubble-multi-content
+    =render :partial => "homepage/listing_bubble", :collection => @listings, :as => :listing

@@ -1,0 +1,28 @@
+{
+  "please_wait": "Vă rugăm să așteptați...",
+  "validation_messages": {
+    "accept": "Imaginea trebuie să fie in format GIF, JPG sau PNG.",
+    "creditcard": "Te rugăm să introduci un număr card valid.",
+    "date": "Vă rugăm să introduceți o dată validă.",
+    "dateISO": "Vă rugăm să introduceți o data valida (ISO).",
+    "digits": "Vă rugăm să introduceți numai cifre.",
+    "email": "Vă rugăm să introduceți o adresă de e-mail validă.",
+    "equalTo": "Vă rugăm să introduceți din nou aceleasi valori.",
+    "max": null,
+    "maxlength": "Vă rugăm nu introduceți mai mult de {0} caractere.",
+    "min": "Vă rugăm să introduceți o valoare mai mare sau egală cu {0}",
+    "minlength": "Vă rugăm să introduceți cel putin {0} caractere.",
+    "number": "Introduceți un număr valid.",
+    "range": "Vă rog introduceți o valoare între {0} si {1}.",
+    "rangelength": "Vă rog introduceți o valoare cuprinsă între {0} si {1} caractere.",
+    "remote": "Vă rog corectați acest câmp.",
+    "required": "Acest câmp este necesar.",
+    "url": "Vă rog introduceți o adresă URL validă.",
+    "address_validator": "Locatia nu a fost găsită.",
+    "money": "Te rog să introduci o sumă validă.",
+    "min_bound": "Te rugăm să introduci o valoare mai mică decat ({0})",
+    "max_bound": "Te rog introdu o valoare peste minimul de ({0})",
+    "number_no_decimals": "Te rog să introduci un numar intreg.",
+    "number_decimals": "Te rog introdu fie un numar valid cu punct (.) sau virgula (,) pe post de separator de zecimale"
+  }
+}
